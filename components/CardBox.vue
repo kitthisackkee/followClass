@@ -1,0 +1,42 @@
+<template>
+  <v-card v-bind="$attrs" v-on="$listeners">
+    <v-list-item>
+      <v-list-item-content class="text-left">
+        <v-layout wrap>
+          <v-icon size="50" :color=iconColor>{{icon}}</v-icon>
+          <v-spacer></v-spacer>
+          <v-btn icon>
+            <v-icon> mdi-dots-vertical </v-icon>
+          </v-btn>
+        </v-layout>
+        <v-list-item-title class="my-2" :class="titleClass">{{title}}</v-list-item-title>
+
+        <v-icon></v-icon>
+        <v-list-item-subtitel>
+          <v-layout wrap>
+            <span class="grey--text">{{fileCount}}</span>
+            <v-spacer></v-spacer>
+            <span>{{fileSize}}</span>
+          </v-layout>
+        </v-list-item-subtitel>
+      </v-list-item-content>
+    </v-list-item>
+  </v-card>
+</template>
+
+<script>
+export default {
+    inheritAttrs: false,
+    props: {
+        title: {type: String, default: "UnTitle"},
+        fileSize: {type: String, default: "0"},
+        fileCount: {type: String, default: "0 file"},
+        icon: {type: String, default: "mdi-folder-open-outline"},
+        iconColor: {type: String, default: "blue"},
+        titleClass: {type: String, default: "blue--text"},
+    }
+};
+</script>
+
+<style>
+</style>
